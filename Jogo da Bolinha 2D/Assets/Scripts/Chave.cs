@@ -1,10 +1,13 @@
+using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
-    public GameObject portaParaAbrir;
+
+    public GameObject porta;
 
     // Start is called before the first frame update
     void Start()
@@ -18,11 +21,10 @@ public class Chave : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collisionInfo)
-    {
+    private void OnCollisionEnter2D(Collision2D other) {
         FindObjectOfType<GerenciadorDeSons>().TocarSomDaChave();
-        Debug.Log("Me Coletou");
-        Destroy(portaParaAbrir);
+        Debug.Log("Chave coletada");
+        Destroy(porta);
         Destroy(this.gameObject);
     }
 }

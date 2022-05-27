@@ -16,7 +16,7 @@ public class Obstaculos : MonoBehaviour
     {
         
     }
-
+    
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
         Debug.Log("Game Over");

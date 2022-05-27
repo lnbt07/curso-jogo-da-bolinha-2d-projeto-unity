@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PassarDeFase : MonoBehaviour
 {
     public string nomeDaProximaFase;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,8 @@ public class PassarDeFase : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collisionInfo)
-    {
+    private void OnCollisionEnter2D(Collision2D other) {
         SceneManager.LoadScene(nomeDaProximaFase);
+
     }
 }

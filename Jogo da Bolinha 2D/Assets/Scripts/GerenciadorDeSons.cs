@@ -1,23 +1,22 @@
+using System.ComponentModel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GerenciadorDeSons : MonoBehaviour
 {
-    public static GerenciadorDeSons instance;
+
+    public static GerenciadorDeSons instance;  
 
     public AudioSource somDaChave;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        
-        if(instance != null)
-        {
+
+        if(instance != null){
             Destroy(this.gameObject);
-        }
-        else
-        {
+        } else {
             instance = this;
         }
     }
@@ -38,4 +37,5 @@ public class GerenciadorDeSons : MonoBehaviour
     {
         somDaChave.Play();
     }
+
 }
